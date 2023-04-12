@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BancoINTEX", "BancoINTEX\BancoINTEX.csproj", "{5B945139-A7F9-40B6-A67F-64F6D2AE67ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B945139-A7F9-40B6-A67F-64F6D2AE67ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B945139-A7F9-40B6-A67F-64F6D2AE67ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B945139-A7F9-40B6-A67F-64F6D2AE67ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B945139-A7F9-40B6-A67F-64F6D2AE67ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A5FF4FE-705B-4F7A-B3CC-16D67039ED72}
+	EndGlobalSection
+EndGlobal
