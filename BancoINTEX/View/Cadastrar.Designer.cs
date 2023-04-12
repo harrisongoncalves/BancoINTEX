@@ -36,7 +36,7 @@
             this.txbSenha = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txbConfSenha = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.mtxbCPF = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
@@ -116,17 +116,18 @@
             this.txbConfSenha.Size = new System.Drawing.Size(236, 22);
             this.txbConfSenha.TabIndex = 4;
             // 
-            // button2
+            // btnCadastrar
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Code Pro Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(34, 281);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 34);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "CADASTRAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Code Pro Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(34, 281);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(190, 34);
+            this.btnCadastrar.TabIndex = 5;
+            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // mtxbCPF
             // 
@@ -146,7 +147,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(258, 322);
             this.Controls.Add(this.mtxbCPF);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCadastrar);
             this.Controls.Add(this.txbConfSenha);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txbSenha);
@@ -173,7 +174,7 @@
         private System.Windows.Forms.TextBox txbSenha;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txbConfSenha;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.MaskedTextBox mtxbCPF;
     }
 }

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using BancoINTEX.Model;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BancoINTEX.View
@@ -30,6 +25,22 @@ namespace BancoINTEX.View
 
         private void mtxbCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            Controle controle = new Controle();
+            string cpf = new string(mtxbCPF.Text.Where(char.IsDigit).ToArray());
+            String mensagem = controle.Cadastrar(cpf, txbNome.Text, txbSenha.Text, txbConfSenha.Text);
+            if (controle.tem)
+            {
+                MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(controle.mensagem);
+
+            }
         }
     }
 }

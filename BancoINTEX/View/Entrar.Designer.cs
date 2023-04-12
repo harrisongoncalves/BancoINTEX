@@ -34,7 +34,7 @@
             this.mtxbCPF = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txbSenha = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEntrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,23 +80,24 @@
             // txbSenha
             // 
             this.txbSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbSenha.Location = new System.Drawing.Point(12, 146);
+            this.txbSenha.Location = new System.Drawing.Point(12, 143);
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(212, 22);
             this.txbSenha.TabIndex = 7;
             // 
-            // button2
+            // btnEntrar
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Code Pro Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(20, 171);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(190, 34);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "ENTRAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEntrar.FlatAppearance.BorderSize = 0;
+            this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntrar.Font = new System.Drawing.Font("Code Pro Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntrar.Location = new System.Drawing.Point(20, 169);
+            this.btnEntrar.Name = "btnEntrar";
+            this.btnEntrar.Size = new System.Drawing.Size(190, 34);
+            this.btnEntrar.TabIndex = 8;
+            this.btnEntrar.Text = "ENTRAR";
+            this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // Entrar
             // 
@@ -104,7 +105,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(227, 209);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txbSenha);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.mtxbCPF);
@@ -127,6 +128,6 @@
         private System.Windows.Forms.MaskedTextBox mtxbCPF;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txbSenha;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEntrar;
     }
 }
