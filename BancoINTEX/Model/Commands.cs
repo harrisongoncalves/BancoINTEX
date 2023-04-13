@@ -45,7 +45,7 @@ namespace BancoINTEX.Model
                 if (count == 1)
                 {
                     sql.Desconectar();
-                    this.mensagem = "Você já está cadastro no Banco INTEX.";
+                    this.mensagem = "Você já está cadastrado no Banco INTEX.";
                     return mensagem;
                 }
             }
@@ -72,6 +72,7 @@ namespace BancoINTEX.Model
             sql.Desconectar();
             return mensagem;
         }
+
 
         public bool VerificarLogin(String cpf, String senha)
         {

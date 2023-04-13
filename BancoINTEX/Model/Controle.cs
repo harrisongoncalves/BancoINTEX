@@ -6,6 +6,7 @@ namespace BancoINTEX.Model
     {
         public bool tem;
         public String mensagem = "";
+        public String cpfUsuario = "";
         Commands comando = new Commands();
 
         public bool EntrarNaConta(String cpf, String senha)
@@ -26,6 +27,11 @@ namespace BancoINTEX.Model
             }
             this.tem = true;
             return mensagem;
+        }
+
+        public void PegarCPF(string cpf)
+        {
+            cpfUsuario = cpf;
         }
     }
 }

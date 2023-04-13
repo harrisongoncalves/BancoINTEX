@@ -1,13 +1,8 @@
 ﻿using BancoINTEX.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+using System.Data.SqlClient;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BancoINTEX.View
@@ -27,8 +22,10 @@ namespace BancoINTEX.View
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
+            SqlCommand cmd = new SqlCommand();
             SQL sql = new SQL();
             string cpf = new string(mtxbCPF.Text.Where(char.IsDigit).ToArray());
+            controle.PegarCPF(cpf);
             controle.EntrarNaConta(cpf, txbSenha.Text);
 
             if (controle.mensagem.Equals(""))
@@ -36,8 +33,10 @@ namespace BancoINTEX.View
                 if (controle.tem)
                 {
                     MessageBox.Show("Logado com sucesso", "Entrando", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Banco banco = new Banco();
+                    Banco banco = new Banco(controle);
                     banco.Show();
+                    Form1 form = new Form1();
+                    form.Close();
                     this.Close();
                 }
                 else
@@ -49,6 +48,10 @@ namespace BancoINTEX.View
             {
                 MessageBox.Show(controle.mensagem);
             }
+        }
+
+        private void txbSenha_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

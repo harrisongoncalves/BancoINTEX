@@ -85,6 +85,7 @@
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(212, 22);
             this.txbSenha.TabIndex = 7;
+            this.txbSenha.TextChanged += new System.EventHandler(this.txbSenha_TextChanged);
             // 
             // btnEntrar
             // 

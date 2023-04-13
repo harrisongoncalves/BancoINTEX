@@ -1,6 +1,7 @@
 ﻿using BancoINTEX.Model;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace BancoINTEX.View
@@ -35,11 +36,30 @@ namespace BancoINTEX.View
             if (controle.tem)
             {
                 MessageBox.Show(controle.mensagem, "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             else
             {
                 MessageBox.Show(controle.mensagem);
+                this.Close();
+            }
+        }
 
+        private void txbNome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+
+            if (e.KeyChar == (char)1)
+            {
+                e.Handled = false;
             }
         }
     }
