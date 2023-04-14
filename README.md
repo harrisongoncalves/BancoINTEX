@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://i.ibb.co/d2BtRqn/banco.png">
+<img src="https://i.ibb.co/GtFZJw2/intex.png">
 </a>
 
 <p align="center">
@@ -11,7 +11,9 @@
 </h1>
 
 <div>
-    <img src="https://i.ibb.co/xfD6byg/bancointex.png" alt="1" border="0" width="768" height="387" style="margin-right:1px;">
+    <img src="https://i.ibb.co/V9pg687/menu.png" alt="menu" border="-" width="219" height="226" style="margin-right:-70px;">
+    <img src="https://i.ibb.co/kQBWQcy/cadastrar.png" alt="cadastro" border="-50" width="305" height="359" style="margin-right:-200px;">
+    <img src="https://i.ibb.co/drS8bqG/entrar.png" alt="entrar" border="0" width="237" height="207">
 </div>
 
 <h1>
