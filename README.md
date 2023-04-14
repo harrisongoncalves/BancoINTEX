@@ -11,9 +11,9 @@
 </h1>
 
 <div>
-    <img src="https://i.ibb.co/V9pg687/menu.png" alt="menu" border="-" width="219" height="226" style="margin-right:-70px;">
-    <img src="https://i.ibb.co/kQBWQcy/cadastrar.png" alt="cadastro" border="-50" width="305" height="359" style="margin-right:-200px;">
-    <img src="https://i.ibb.co/drS8bqG/entrar.png" alt="entrar" border="0" width="237" height="207">
+    <img src="https://i.ibb.co/Gdmk49H/menu.png" alt="menu" width="206" height="216" style="margin-right:2px;">
+    <img src="https://i.ibb.co/w0RY90s/cadastrar.png" alt="cadastro" width="258" height="314" style="margin-right:-2px;">
+    <img src="https://i.ibb.co/jkqvGCt/entrar.png" alt="entrar" width="187" height="169">
 </div>
 
 <h1>
