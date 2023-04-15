@@ -1,6 +1,7 @@
 ﻿using System;
 using BancoINTEX.View;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace BancoINTEX
 
@@ -13,7 +14,6 @@ namespace BancoINTEX
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace BancoINTEX
 
         }
 
-       private void CadastrarClosed(object sender, FormClosedEventArgs e)
+        private void CadastrarClosed(object sender, FormClosedEventArgs e)
         {
             cadastrarInstance = null;
         }
@@ -57,6 +57,27 @@ namespace BancoINTEX
         private void EntrarClosed(object sender, FormClosedEventArgs e)
         {
             entrarInstance = null;
+        }
+
+        private Point lastLocation;
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Form1_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
         }
     }
 }

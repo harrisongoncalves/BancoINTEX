@@ -1,7 +1,7 @@
 ﻿using BancoINTEX.Model;
 using System;
+using System.Drawing;
 using System.Linq;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace BancoINTEX.View
@@ -13,7 +13,6 @@ namespace BancoINTEX.View
             InitializeComponent();
             mtxbCPF.ShortcutsEnabled = false;
             mtxbCPF.MaxLength = 11;
-
         }
 
         private void mtxbCPF_KeyPress(object sender, KeyPressEventArgs e)
@@ -61,6 +60,53 @@ namespace BancoINTEX.View
             {
                 e.Handled = false;
             }
+        }
+
+
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void label1_MouseMove(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void label1_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private Point lastLocation;
+
+        private void Cadastrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void Cadastrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cadastrar_Load(object sender, EventArgs e)
+        {
+            SQL sql = new SQL();
+            sql.Conectar();
+        }
+
+        private void txbNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

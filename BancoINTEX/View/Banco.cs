@@ -1,6 +1,7 @@
 ﻿using BancoINTEX.Model;
 using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace BancoINTEX.View
@@ -31,9 +32,41 @@ namespace BancoINTEX.View
             lblSaldo.Text = saldo.ToString("C");
         }
 
-        private void btnPix_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
-            PIX pix = new PIX();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private Point lastLocation;
+
+        private void Banco_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void Banco_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DEPBoleto depBoleto = new DEPBoleto();
+            depBoleto.Show();
+        }
+
+        private void btnPIX_Click(object sender, EventArgs e)
+        {
+            PIX pix = new PIX(controle);
             pix.Show();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace BancoINTEX.Model
 {
@@ -96,6 +97,22 @@ namespace BancoINTEX.Model
                 this.mensagem = "Erro com banco de dados!";
             }
             return tem;
+        }
+
+        public void ProcurarCPF(string cpf)
+        {
+            string query = "SELECT COUNT(*) FROM loginsBANCO WHERE cpf = @cpf";
+            using (SqlCommand command = new SqlCommand(query, sql.Conectar()))
+            {
+                command.Parameters.AddWithValue("@cpf", cpf);
+                int count = (int)command.ExecuteScalar();
+
+                if (count == 0)
+                {
+                    sql.Desconectar();
+                    MessageBox.Show("Este CPF não possui conta no nosso banco.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

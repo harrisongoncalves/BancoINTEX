@@ -61,6 +61,12 @@
     <Compile Include="View\Cadastrar.Designer.cs">
       <DependentUpon>Cadastrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\DEPBoleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DEPBoleto.Designer.cs">
+      <DependentUpon>DEPBoleto.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Entrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Cadastrar.resx">
       <DependentUpon>Cadastrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DEPBoleto.resx">
+      <DependentUpon>DEPBoleto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Entrar.resx">
       <DependentUpon>Entrar.cs</DependentUpon>

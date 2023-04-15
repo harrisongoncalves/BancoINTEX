@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using BancoINTEX.Model;
+using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BancoINTEX.View
 {
     public partial class PIX : Form
     {
-        public PIX()
+        private Controle controle;
+        public PIX(Controle controle)
         {
             InitializeComponent();
+            this.controle = controle;
         }
 
         private void mtxbCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -30,25 +27,84 @@ namespace BancoINTEX.View
 
         private void txbNome_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+        }
+
+        private void PIX_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string cpfUsuario = controle.cpfUsuario;
+            string cpf = new string(mtxbCPF.Text.Where(char.IsDigit).ToArray());
+            if (cpf == cpfUsuario)
+            {
+                MessageBox.Show("Você não pode transferir para si mesmo.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                float valor = float.Parse(mtxbValor.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Insira um valor válido.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void mtxbValor_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private Point lastLocation;
+
+        private void PIX_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void PIX_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void mtxbValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
-                return;
             }
-
-
-            if ((e.KeyChar == ',') && (txbNome.Text.IndexOf(',') > -1) && (txbNome.Text.IndexOf(',') < txbNome.SelectionStart || txbNome.Text.IndexOf(',') > txbNome.SelectionStart + txbNome.SelectionLength - 1))
+            else if (e.KeyChar == ',')
             {
-                e.Handled = true;
-                return;
+                if (mtxbValor.Text.Contains(",") || mtxbValor.Text.Length == 0)
+                {
+                    e.Handled = true;
+                }
             }
 
-            int precision = 2;
-            int index = txbNome.Text.IndexOf('.');
-            if (index > -1 && txbNome.Text.Length - index > precision && txbNome.SelectionLength == 0)
-            {   
+            if (e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+            }
+
+            if (e.KeyChar == (char)1)
+            {
+                ((MaskedTextBox)sender).SelectAll();
                 e.Handled = true;
-                return;
             }
         }
     }

@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,19 +17,28 @@ namespace BancoINTEX.View
 
         private void Entrar_Load(object sender, EventArgs e)
         {
-
+            SQL sql = new SQL();
+            sql.Conectar();
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             Controle controle = new Controle();
             SqlCommand cmd = new SqlCommand();
-            SQL sql = new SQL();
             string cpf = new string(mtxbCPF.Text.Where(char.IsDigit).ToArray());
+            string senha = txbSenha.Text;
             controle.PegarCPF(cpf);
-            controle.EntrarNaConta(cpf, txbSenha.Text);
+            controle.EntrarNaConta(cpf, senha);
 
-            if (controle.mensagem.Equals(""))
+            if (string.IsNullOrEmpty(cpf))
+            {
+                MessageBox.Show("Por favor, insira seu CPF.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (string.IsNullOrEmpty(senha))
+            {
+                MessageBox.Show("Por favor, insira sua senha.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 if (controle.tem)
                 {
@@ -44,7 +54,8 @@ namespace BancoINTEX.View
                     MessageBox.Show("Conta não encontrada. Verifique seu CPF e sua senha", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+
+            if (!controle.mensagem.Equals(""))
             {
                 MessageBox.Show(controle.mensagem);
             }
@@ -52,6 +63,32 @@ namespace BancoINTEX.View
 
         private void txbSenha_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private Point lastLocation;
+
+        private void Entrar_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+        }
+
+        private void Entrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastLocation.X;
+                this.Top += e.Y - lastLocation.Y;
+            }
+        }
+
+        private void mtxbCPF_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }
