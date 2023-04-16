@@ -11,10 +11,12 @@
 </h1>
 
 <div>
-    <img src="https://i.ibb.co/Gdmk49H/menu.png" alt="menu" width="206" height="216" style="margin-right:2px;">
-    <img src="https://i.ibb.co/w0RY90s/cadastrar.png" alt="cadastro" width="258" height="314" style="margin-right:-2px;">
-    <img src="https://i.ibb.co/jkqvGCt/entrar.png" alt="entrar" width="187" height="169">
+    <img src="https://i.ibb.co/Gdmk49H/menu.png" alt="menu" width="206" height="216" style="margin-right:1px;">
+    <img src="https://i.ibb.co/w0RY90s/cadastrar.png" alt="cadastro" width="258" height="314" style="margin-right:1px;">
+    <img src="https://i.ibb.co/jkqvGCt/entrar.png" alt="entrar" width="187" height="169" style="margin-right:0px;">
+    <img src="https://i.ibb.co/jkFWKbd/banco.png" alt="banco" width="274" height="242">
 </div>
+
 
 <h1>
 Como utilizar?
